@@ -1,0 +1,117 @@
+    <div  ng-controller="ordercontroller">
+         <div id="mainbody" >
+            <div class="bodyhead">
+                <h4 class="showmenu"> Show all menu</h4>
+                <h2> GULZAR SPECIAL</h2>
+            </div>
+            <div class="divider"></div>
+            <h3 class="subheading"> Category </h3>
+
+            <slidebox content-width="100%"  > 
+              <div   class = "rowstyle">
+                <div ng-repeat="dispicon in maincategories" class="slidebox-content cellstyle" >
+                  <img  ng-click="loadcategories($index)" ng-src="img/{{maincategories[$index].imagename}}.png"/> <br/>
+                    {{maincategories[$index].title}} 
+                 </div>
+               </div>
+            </slidebox>
+            <br/>
+            <div ng-show="mainselected">
+              <slidebox content-width="100%"  > 
+                <div   class = "rowstyle">
+                  <div ng-repeat="dispicon in categories" class="slidebox-content cellstyle animate-repeat">
+                    <img  ng-click="loadsubcategories($index)" ng-src="img/{{categories[$index].imagename}}.png"/> <br/>
+                    {{categories[$index].title}} 
+                   </div>
+                </div>
+              </slidebox>
+            </div>
+
+            <h3 class="subheading" ng-show="categoryselected"> Sub Category</h3>
+             
+           
+            <div class="horizontal" ng-show="categoryselected">
+              <table >
+                <tr ng-repeat="dispicon in subcategories" ng-if="$index%3==0" >
+
+
+                  <td >
+                  <b style="float:left; padding-left: 2%"> {{subcategories[$index].subtitle}} </b><br/>
+                  <div class="row">
+                          <div class="col-3" >
+                            <img class="subcatimage" ng-src="img/{{subcategories[$index].imagename}}.jpg"/>
+                          </div>
+
+                          <div class="col-8">
+                            <p>{{subcategories[$index].description}}</p>
+                          </div>
+                          <div class="col-2"><input type="number" value=0 name="quantity" min="0" style="width: 70%;" ng-model="subcategories[$index].quantity"></div>
+                          <div class="col-2"><input type="currency" name="amount" value={{subcategories[$index].cost}} readonly style="width: 70%;" ></div>
+                          <div class="col-2"> <img ng-src="img/note.png" ng-click="comment=!comment"> </div>
+                          <div class="col-2"><input type="checkbox" name={{subcategories[$index].subtitle}}  ng-model="fOrder.myChkModel[$index]" ng-change="fOrder.myClick(fOrder.myChkModel[$index],$index)" ng-checked="fOrder.checkedStatus[$index]" ><br/>
+                          </div>
+                          <div class="col-11"  ng-show="comment">
+                          <textarea type="text" placeholder="Additional instructions..." class="addcoments" ng-model="subcategories[$index].addcom"></textarea>
+                          </div>
+
+                  </div>
+                  </td>
+
+                  <td>
+                   <b style="float:left; padding-left: 2%"> {{subcategories[$index+1].subtitle}} </b><br/>
+                   <div class="row" ng-show="$index+1<subcategories.length;">
+                          <div class="col-3" >
+                            <img  class="subcatimage" ng-src="img/{{subcategories[$index+1].imagename}}.jpg"/>
+                          </div>
+
+                          <div class="col-8">
+                            <p>{{subcategories[$index +1].description}}</p>
+                          </div>
+                          <div class="col-2"><input type="number" value=0 name="quantity" min="0" style="width: 70%;"
+                           ng-model="subcategories[$index +1].quantity"></div>
+                          <div class="col-2"><input type="currency" name="amount" value={{subcategories[$index+1].cost}} readonly style="width: 70%;"></div>
+                          <div class="col-2"><img ng-src="img/note.png" ng-click="comment2=!comment2"/> </div>
+                          <div class="col-2"><input type="checkbox" name={{subcategories[$index+1].subtitle}}  ng-model="fOrder.myChkModel[$index+1]" ng-change="fOrder.myClick(fOrder.myChkModel[$index+1],$index+1)"><br/>
+                          </div>
+                          <div class="col-11"  ng-show="comment2">
+                          <textarea type="text" placeholder="Additional instructions..." class="addcoments" ng-model="subcategories[$index +1].addcom"></textarea>
+                          </div>
+                  </div>
+                   </td>
+
+                   <td>
+                   <b style="float:left; padding-left: 2%"> {{subcategories[$index+2].subtitle}} </b><br/>
+                 
+                   <div class="row"  ng-show="$index+2<subcategories.length;">
+                          <div class="col-3" >
+                            <img class="subcatimage" ng-src="img/{{subcategories[$index+2].imagename}}.jpg"/>
+                          </div>
+
+                          <div class="col-8">
+                            <p>{{subcategories[$index +2].description}}</p>
+                          </div>
+                          <div class="col-2"><input type="number" value=0 name="quantity" min="0" style="width: 70%;" ng-model="subcategories[$index +2].quantity"></div>
+                          <div class="col-2"><input type="currency" name="amount" value={{subcategories[$index+2].cost}} readonly style="width: 70%;"></div>
+                          <div class="col-2"><img ng-src="img/note.png" ng-click="comment3=!comment3"/></div>
+                          <div class="col-2"><input type="checkbox" name={{subcategories[$index+2].subtitle}}  ng-model="fOrder.myChkModel[$index+2]" ng-change="fOrder.myClick(fOrder.myChkModel[$index+2],$index+2)" ><br/>
+                          </div>
+                          <div class="col-11"  ng-show="comment3">
+                          <textarea type="text" placeholder="Additional instructions..." class="addcoments" ng-model="subcategories[$index +2].addcom"></textarea>
+                          </div>
+                  </div>
+                   </td>
+
+                </tr>
+              </table>
+            </div>
+          
+
+             
+            <div class="centereddiv">
+              <a ui-sref="order"> 
+             <button class="button" ng-show="categoryselected"><span>CONFIRM ORDER </span></button>
+              </a>
+            </div>
+         </div>    
+  </div>  
+ 

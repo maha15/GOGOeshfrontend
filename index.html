@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html  ng-app="app1" ng-cloak>
+  <head>
+   
+    
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="styleSheet" href="styles/custom.css" />
+    <link rel="styleSheet" href="styles/responsive.css" />
+    <link rel="styleSheet" href="styles/order.css" />
+
+    <!-- Set the base href 
+    <script>document.write('<base href="' + document.location + '" />');</script>-->
+    <title>Place Order</title>
+    <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <link href="styles/css/toaster.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/font-awesome-4.7.0/css/font-awesome.min.css">
+      <style>
+      a {
+      color: orange;
+      }
+    </style>
+
+
+  </head>
+
+  <body>
+
+     <div id= "wrapper" ng-controller="ordercontroller">
+        <div id= "headerstrip"> 
+          <div id="pulseheaderleft">
+            <div class = "iconhead">
+              <img ng-src="img/nuage.png" alt="logo"></img>
+            </div>
+            <div class="headtext">
+                <h2> Pulse </h2>
+            </div>          
+          </div>
+
+          <div id="headertotalright">
+            <h3> <p>TOTAL: {{dataService.totalamount | currency}}</p> </h3>
+          </div>
+        </div>
+
+
+        <ui-view></ui-view>
+
+
+     </div>
+
+      <script src="scripts/angular.min.js"></script>
+      <script src="scripts/angular-animate/angular-animate.js"></script>
+      <script src="scripts/angular-ui-router.min.js"></script>
+
+      <script src="app/controller.js"></script>
+      <script src="app/slidebox.js"></script>
+      <toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+      <!-- Libs -->
+      <script src="scripts/toaster.js"></script>
+      <script src="app/app.js"></script>
+      <script src="app/data.js"></script>
+      <script src="app/directives.js"></script>
+      <script src="app/authCtrl.js"></script>
+
+
+  </body>
+
+
+ 
+</html>
+

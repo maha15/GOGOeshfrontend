@@ -1,0 +1,21 @@
+@media all and (max-width:1300px){
+    table{
+        width:100%;
+    }
+
+    td{
+        display:block;
+        width:100%;
+    }
+
+    tr{
+        display:block;
+      
+    }
+      #headertotalright{
+   
+    margin-left: 80%;
+    width: 100%;
+    
+    }
+}

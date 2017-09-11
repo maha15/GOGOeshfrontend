@@ -1,0 +1,46 @@
+
+<div ng-controller="confirmordercontroller">
+    
+  <div class="ocontainer">
+    <div class="ocenter">
+      <div class="oheader">
+        <h2 class="oheadtext">Your Order</h2>
+        <label class="oheadamount">&#128336  Time to cook <b>{{timetocook}} hrs</b></label>
+      </div>
+      <div class="table-responsive">          
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="col-xs-2">Name</th>
+              <th class="col-xs-7"></th>
+              <th class="col-xs-2">Quantity</th>
+              <th class="col-xs-1">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="item in dataService.orderdetails" >
+              <td> &nbsp {{$index + 1}}
+              <img   style="padding-left: 10%;" ng-src="img/{{item.imagename}}.jpg"/></td>
+              <td> {{item.subtitle}}</td>
+              <td> <input type="number" value={{item.quantity}} name="quantity" min="0" style="width: 70%;"
+                         ng-model="item.quantity" ng-change="isUpdated($index, '{{item.quantity}}')"> </td>
+              <td> {{item.cost * item.quantity | currency}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="oleftdiv">
+        <h4> Total &nbsp &nbsp {{dataService.totalamount | currency}} </h4>
+      </div>
+
+      <div class="rightdiv">
+        <a ui-sref="register.login"> 
+          <button class="button" ng-show="dataService.orderdetails.length"><span> CONFIRM ORDER </span></button>
+        </a>
+      </div>
+    </div>
+  </div>
+   
+</div>
+  

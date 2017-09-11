@@ -1,0 +1,338 @@
+
+* {
+    box-sizing: border-box;
+}
+html, body, #wrapper, #mainbody{
+    overflow: auto;
+}
+
+body{
+	padding: 0%;
+ 	margin: 0%;
+ 	max-width: 100%;
+ 	min-width: 100%;
+ 	overflow-y: scroll;
+ 	overflow-x: hidden;
+}
+
+#wrapper{
+	margin-left: auto;
+	margin-right: auto;
+
+	height: 100vh;
+	width:100vw;
+}
+
+
+/* ---- header -----*/
+#headerstrip {
+	background-color: #FFD217;
+	width: 100vw;
+	min-height: 8%;
+	color: #ffffff;
+    display: table;
+     overflow: hidden;
+    position: relative;
+
+}
+#pulseheaderleft, #headertotalright { 
+    display: table-cell;
+}
+#pulseheaderleft{
+	width: auto;
+	float: left;
+	display: flex;
+	padding-left: 1%;
+	margin: 0px;
+	min-height: 9%;
+	align-items: center;
+	padding-top: 0.5%;
+}
+.iconhead{
+	float: left;
+	display: inline-block;
+	align-items: stretch;
+	padding-right: 10%;
+}
+.headtext{
+	position: relative;
+	display: inline-block;
+	float: right;
+	width: auto;
+}
+#headertotalright{
+	background-color: #498FE7;
+	float: right;
+	padding: 10px;
+	 height: 100%;
+	 position:absolute;
+    margin-left: 88%;
+    white-space: nowrap;
+    width: 12%;
+}
+#headerstrip::after {
+    content:'';
+    display:block;
+    clear: both;
+}
+/* ---- header -----*/
+
+#mainbody{
+	border-color:  #F7F6F4;
+	border-style: solid;
+   background-color: #ffffff;
+   z-index: 1;
+   position: relative;   
+  margin: 0;
+  padding: 0;
+}
+
+h2{
+	margin:0;
+	padding: 0;
+}
+h3{
+	margin:1%;
+}
+
+ [ng\:cloak], [ng-cloak], .ng-cloak {
+      display: none;
+ }
+
+.bodyhead{
+	width: 100%; 
+	padding: 15px; 
+	text-align: center; 
+	position: relative;
+
+}
+ .showmenu{
+	position: absolute; 
+	right: 4%;
+	bottom:3%;
+}
+
+
+
+
+.divider{
+	background-color: #F7F6F4;
+	
+	height: 0.5vh;
+	z-index: 3;
+	position: relative;
+}
+.subheading{
+	text-align: center;
+	width:  100vw;
+	position: relative;
+}
+
+
+/* for horizontal scroll */
+
+.slidebox-content {
+  width: 20%;
+  vertical-align: middle;
+    text-align: center;
+    padding-bottom: .2%;
+}
+
+.rowstyle{
+	white-space: nowrap;
+}
+.cellstyle{
+	display: inline-block; 
+	white-space: normal;
+}
+#contentsubcat{
+	width: 33.33vw;
+}
+div.horizontal {
+    width: 100%;
+    margin-top: 1%;
+}
+table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+
+
+/**
+ * Slidebox default styles
+ * 
+ * https://github.com/keithjgrant/slidebox
+ * Version 0.9
+ * Eddited by: Maha Amjad;
+ */
+
+.slidebox-container {
+    position: relative;
+}
+
+.slidebox {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+   
+}
+
+.slidebox-content {
+}
+
+.slidebox-controls {
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    bottom: 1%; /* don't cover scrollbar */
+    width: 10%;
+}
+
+.slidebox-left {
+    background: rgba(0, 0, 0, 0) url(../img/left-arrow.png) left center no-repeat;
+    left: 0;
+    cursor: w-resize;
+}
+
+.slidebox-right {
+    background: rgba(0,0,0,0) url(../img/right-arrow.png) right center no-repeat;
+    right: 0;
+    cursor: e-resize;
+}
+
+
+/* ----- Button  order place -----*/
+.rightdiv{
+   display: table;
+   margin: 0 auto 10 auto;
+   float: right;
+}
+
+.centereddiv{
+   display: table;
+   margin: 0 auto;
+}
+.button {
+  border-radius: 4%;
+  background-color: #FFD217;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 14px;
+  padding: 14px;
+  width: 15vw;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.button span {
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+  vertical-align:middle
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+/* ------------------- */
+
+
+
+/*Load new categories with animation*/
+
+.animate-repeat {
+  position: relative;
+}
+
+.animate-repeat.ng-move, .animate-repeat.ng-enter {
+  transition: all linear 0.1s;
+}
+
+.animate-repeat.ng-move, .animate-repeat.ng-enter {
+  left: -100px;
+}
+
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  left: 0;
+}
+
+.animate-repeat.ng-enter-stagger {
+  transition-delay: 0.1s;
+  transition-duration: 0;
+}
+
+/*-------------*/
+
+
+
+/* grid for each subacategory item*/
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+[class*="col-"] {
+    float: left;
+    padding: 0px;
+
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10{width: 83.33%;}
+.col-11{width: 91.66%;}
+.col-12{width: 100%;}
+input[type=number] { text-align:center; }
+
+.subcatimage{
+	padding-top: 5%;
+    padding-left: 8%;
+}
+
+.addcoments{
+  border: none;
+  background-color: none;
+  outline: 0;
+  float: left;
+  padding-left: 3%;
+  width: 100%;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.row.text-center > div {
+    display: inline-block;
+    float: none;
+}
+
+.divider-right{
+  border-right: 2px solid  #F7F6F4;
+ 
+}

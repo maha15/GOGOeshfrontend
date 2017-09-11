@@ -1,0 +1,45 @@
+
+    <br/>
+    <div class="centereddiv"> Continue with Facebook <a onclick="" class="btn-social-icon btn-lg btn-facebook"><i class="fa fa-facebook"></i></a>
+    </div>
+
+<br/>
+    <form name="loginForm" class="form-horizontal" role="form">
+        <div class="form-group  row text-center">
+            
+            <div class="col-sm-7">
+               <span class="block input-icon input-icon-right">
+                    <input type="text" class="form-control" placeholder="Email / Phone" name="email" ng-model="login.email" required focus/> 
+                </span>
+            </div>
+        </div>
+        <div class="form-group row text-center">
+            
+            <div class="col-sm-7">
+               <span class="block input-icon input-icon-right">
+                    <input type="password" class="form-control" placeholder="Password" ng-model="login.password" required/>
+                </span>
+            </div>
+        </div>
+        
+        
+
+         <div class="row text-center">
+            <div class="col-xs-5" > 
+                <input type="checkbox">  Remember me </input> 
+            </div>
+            <div class="col-xs-5"> 
+            Forgot the Password?
+             </div>
+
+        </div>
+        <br/>
+         <div class="clearfix">
+            <div class="centereddiv">
+         <!--   ng-click="doLogin(login)"-->      <button type="submit" class="button "  data-ng-disabled="loginForm.$invalid">Login</button>
+            </div>
+        </div>
+    </div>
+    </form>
+
+ 
